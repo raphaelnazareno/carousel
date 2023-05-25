@@ -24,8 +24,9 @@ import {
   AnimationBuilder,
   AnimationPlayer,
 } from '@angular/animations';
-import { HWrapComponent } from './wrap.component';
-import { HSlideDirective } from './hslide.directive';
+
+import { HSlideDirective } from '../../directives/hslide.directive';
+import { HWrapComponent } from '../wrap/wrap.component';
 
 @Component({
   selector: 'hammer-slider',
@@ -41,8 +42,6 @@ export class HammerSliderComponent implements OnInit {
   _active: number = 0;
   @Input()
   set active(active: number) {
-    console.log(active);
-
     if (this.ready && !this.animating) {
       this._active = active;
       this.goTo(this._active);
@@ -96,8 +95,6 @@ export class HammerSliderComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    console.log(this.hslides);
-
     this.hslides.toArray().forEach((hslide: any) => {
       this.preSlides.push(hslide.el.nativeElement.cloneNode(true));
       this.allSlides.push(hslide.el.nativeElement);
@@ -112,9 +109,6 @@ export class HammerSliderComponent implements OnInit {
       undefined,
       [this.preSlides]
     );
-    console.log('pre ', preSlideWrap.location.nativeElement);
-
-    // this.rend.addClass(preSlideWrap.instance.el.nativeElement, 'pre-slide');
     this.rend.addClass(preSlideWrap.location.nativeElement, 'pre-slide');
 
     const slideWrap: any = this.slidesVC.createComponent(
@@ -200,17 +194,6 @@ export class HammerSliderComponent implements OnInit {
   }
 
   goTo(_to: any) {
-    console.log(_to);
-
-    //this._active = _to;
-
-    /*
-    if (_to < 0){
-      //this._active = 0;
-    }else if (_to > this.total - 1)
-      this._active = this.total - 1;
-    */
-
     if (!this.animating) {
       this._active = _to;
       this.activeChange.emit(this._active);

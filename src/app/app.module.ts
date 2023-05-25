@@ -5,14 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
-import { HammerSliderModule } from './hammer-slider/hammer-slider.module';
+import { HammerSliderModule } from './web-component/hammer-slider/hammer-slider.module';
 
 import * as Hammer from 'hammerjs';
 import {
   HammerGestureConfig,
   HAMMER_GESTURE_CONFIG,
 } from '@angular/platform-browser';
-import { PagerBlobComponent } from './pager-blob/pager-blob.component';
+import { PagerBlobComponent } from './web-component/pager-blob/pager-blob.component';
 
 @Injectable()
 export class HammerConfig extends HammerGestureConfig {

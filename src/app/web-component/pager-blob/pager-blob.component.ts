@@ -19,8 +19,6 @@ export class PagerBlobComponent implements OnInit {
   _total: any = [];
   @Input()
   set total(total: any) {
-    console.log('total ', total);
-
     if (typeof total == 'number') {
       this._total = Array(total).map((x, i) => ({ _index: i }));
     } else {
@@ -52,8 +50,6 @@ export class PagerBlobComponent implements OnInit {
 
     this._active = active;
     let p = (this._config.width + this._config.margin) * this._active;
-    console.log('this.point ', this.point);
-
     this.rend.setStyle(
       this.point.nativeElement,
       'transform',
@@ -71,10 +67,6 @@ export class PagerBlobComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    //console.log(this._total);
-    //let p = 36 * this._active;
-    // <<<---using ()=> syntax
-
     this.rend.setStyle(
       this.point.nativeElement,
       'width',
@@ -100,9 +92,6 @@ export class PagerBlobComponent implements OnInit {
     this._active = item;
     this.activeChange.emit(item);
     this.update.emit({ _index: item });
-    // this._active = item._index;
-    // this.activeChange.emit(item._index);
-    // this.update.emit(item);
   }
 
   extend(obj: any, src: any) {

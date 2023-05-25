@@ -34,7 +34,6 @@ export class AppComponent {
   constructor(private cd: ChangeDetectorRef) {}
 
   sliderUpdate(obj: any) {
-    //console.log(obj);
     this.sliderObject = obj;
     this.cd.detectChanges();
   }
