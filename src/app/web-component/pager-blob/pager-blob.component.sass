@@ -9,33 +9,43 @@
     //margin-right:7px;
     border-radius: 100%
     text-align: center
-    box-shadow: 0 0 5px #fff inset
+    // box-shadow: 0 0 5px #7E7E9D inset
+    background-color: #7E7E9D
 
   &.blobs
     -webkit-filter: url("#goo")
     filter: url("#goo")
     & > li
       background: rgba(255, 255, 255, 0.4)
-      box-shadow: 0 0 6px #fff inset
+      // box-shadow: 0 0 6px #00003C inset
 
   &.btns
     position: absolute
-    z-index: 100
+    z-index: 0
+    margin-top: 0px
     & > li
       transition: 0.5s box-shadow linear
 
       &:not(.active):hover
         cursor: pointer
-        box-shadow: 0 0 15px #fff inset
+        // box-shadow: 0 0 15px #7E7E9D inset
 
   li.active
     position: absolute
-    background: #fff
-    box-shadow: 0 0 15px #fff
-    margin: 3px
+    // background: #00003C !important
+    // box-shadow: 0 0 15px #00003C
+    // margin: 3px
     transform: translate3d(0, 0, 0)
     transition: 1s transform cubic-bezier(0.5, 1.1, 0.6, 1.1)
+    width: 50px !important
+    height: 8px !important
+    background: #00003C
+    border-radius: 20px
 
 svg
   position: absolute
   height: 1px
+
+.margin-right
+  margin: 0px 45px 0 0 !important
+  background: transparentize(#00003C, 1.0) !important

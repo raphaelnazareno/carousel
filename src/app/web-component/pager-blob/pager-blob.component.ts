@@ -34,7 +34,7 @@ export class PagerBlobComponent implements OnInit {
     }
   }
 
-  _config: any = { margin: 4, width: 20, height: 20 };
+  _config: any = { margin: 4, width: 8, height: 8 };
   svg: any = { values: '1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 40 -16', blur: 4 };
 
   @Input()

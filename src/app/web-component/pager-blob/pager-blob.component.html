@@ -5,6 +5,7 @@
     [style.height.px]="_config.height"
     [style.margin-right.px]="lst ? 0 : _config.margin"
     (click)="setActive(i)"
+    [ngClass]="_active == i ? 'margin-right' : ''"
   ></li>
 </ul>
 
