@@ -1,0 +1,31 @@
+<h1>Angular Hammer Slider</h1>
+
+<div class="container">
+  <div class="slider-box">
+    <hammer-slider [(active)]="active" (update)="sliderUpdate($event)">
+      <div
+        hslide
+        *ngFor="let slide of slides; let i = index"
+        [ngClass]="slide.class"
+      >
+        <div class="bg"></div>
+        <h2>{{ slide.label }}</h2>
+      </div>
+    </hammer-slider>
+
+    <button class="prev-btn" (click)="active = active - 1"><</button>
+    <button class="next-btn" (click)="active = active + 1">></button>
+
+    <pager-blob
+      class="pagination"
+      [total]="sliderObject.total"
+      [(active)]="active"
+      [config]="{ margin: 3, width: 20, height: 20 }"
+    ></pager-blob>
+  </div>
+</div>
+{{ active }}
+
+<pre
+  >{{ sliderObject | json }}
+</pre>

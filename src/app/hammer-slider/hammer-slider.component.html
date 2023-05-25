@@ -1,0 +1,12 @@
+<div #mask class="mask">
+  <div
+    #wrap
+    class="wrap"
+    [style.width.px]="wrapw"
+    (panstart)="panStart($event)"
+    (panmove)="panMove($event)"
+    (panend)="panEnd($event)"
+  >
+    <ng-container #slidesVC></ng-container>
+  </div>
+</div>

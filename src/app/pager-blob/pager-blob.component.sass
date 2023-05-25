@@ -1,0 +1,41 @@
+.dots
+  display: flex
+  position: relative
+  align-items: flex-start
+  list-style: none
+  padding: 0
+  margin: 0
+  & > li
+    //margin-right:7px;
+    border-radius: 100%
+    text-align: center
+    box-shadow: 0 0 5px #fff inset
+
+  &.blobs
+    -webkit-filter: url("#goo")
+    filter: url("#goo")
+    & > li
+      background: rgba(255, 255, 255, 0.4)
+      box-shadow: 0 0 6px #fff inset
+
+  &.btns
+    position: absolute
+    z-index: 100
+    & > li
+      transition: 0.5s box-shadow linear
+
+      &:not(.active):hover
+        cursor: pointer
+        box-shadow: 0 0 15px #fff inset
+
+  li.active
+    position: absolute
+    background: #fff
+    box-shadow: 0 0 15px #fff
+    margin: 3px
+    transform: translate3d(0, 0, 0)
+    transition: 1s transform cubic-bezier(0.5, 1.1, 0.6, 1.1)
+
+svg
+  position: absolute
+  height: 1px
