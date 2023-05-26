@@ -13,6 +13,7 @@ import {
   HAMMER_GESTURE_CONFIG,
 } from '@angular/platform-browser';
 import { PagerBlobComponent } from './web-component/pager-blob/pager-blob.component';
+import { CarouselComponent } from './web-component/carousel/carousel.component';
 
 @Injectable()
 export class HammerConfig extends HammerGestureConfig {
@@ -29,7 +30,7 @@ export class HammerConfig extends HammerGestureConfig {
     HammerSliderModule,
     HammerModule,
   ],
-  declarations: [AppComponent, PagerBlobComponent],
+  declarations: [AppComponent, PagerBlobComponent, CarouselComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="slider-box">
+    <hammer-slider [(active)]="active" (update)="sliderUpdate($event)">
+      <div
+        hslide
+        *ngFor="let slide of slides; let i = index"
+        [ngClass]="slide.class"
+      >
+        <div>
+          as
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </hammer-slider>
+
+    <div *ngIf="buttons">
+      <button class="prev-btn" (click)="active = active - 1"><</button>
+      <button class="next-btn" (click)="active = active + 1">></button>
+    </div>
+
+    <pager-blob
+      *ngIf="dots"
+      class="pagination"
+      [total]="sliderObject.total"
+      [(active)]="active"
+      [config]="{ margin: 3, width: 10, height: 8 }"
+    ></pager-blob>
+  </div>
+</div>
+
+<pre
+  >{{ sliderObject | json }}
+</pre>
