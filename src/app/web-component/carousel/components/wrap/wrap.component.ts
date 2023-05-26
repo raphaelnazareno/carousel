@@ -1,13 +1,9 @@
 import {
   Component,
   OnInit,
-  HostBinding,
-  ViewChild,
-  Input,
   ChangeDetectorRef,
   ViewContainerRef,
   ElementRef,
-  TemplateRef,
 } from '@angular/core';
 
 @Component({

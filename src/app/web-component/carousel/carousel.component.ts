@@ -1,4 +1,11 @@
-import { ChangeDetectorRef, Component, ContentChildren, Input, OnInit, TemplateRef } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  Input,
+  OnInit,
+  TemplateRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -6,7 +13,6 @@ import { ChangeDetectorRef, Component, ContentChildren, Input, OnInit, TemplateR
   styleUrls: ['./carousel.component.sass'],
 })
 export class CarouselComponent {
-
   @Input() buttons: boolean = false;
   @Input() dots: boolean = true;
   @Input() slides!: any;
@@ -24,5 +30,4 @@ export class CarouselComponent {
     this.sliderObject = obj;
     this.cd.detectChanges();
   }
-
 }

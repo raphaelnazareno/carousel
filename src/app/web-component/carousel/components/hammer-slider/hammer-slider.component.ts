@@ -25,7 +25,7 @@ import {
   AnimationPlayer,
 } from '@angular/animations';
 
-import { HSlideDirective } from '../../directives/hslide.directive';
+import { HSlideDirective } from '../../../../directives/hslide.directive';
 import { HWrapComponent } from '../wrap/wrap.component';
 
 @Component({
